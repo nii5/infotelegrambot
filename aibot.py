@@ -32,14 +32,22 @@ async def cmd_start(message: types.Message):
                          "Для продолжения нажмите клавишу 'Узнать о заказа'", reply_markup=keyboard)
 
 
-@dp.callback_query_handler(lambda c: c.data == 'getInvouce')
+@dp.callback_query_handler(lambda c: c.data == 'getInvoice')
+async def process_callback_getInvouce(callback_query: types.CallbackQuery):
+
+    keyboard = await keyboards.invoice_keyboard()
+    await bot.answer_callback_query(callback_query.id)
+    await bot.send_message(callback_query.from_user.id, 'Кто вы:', reply_markup=keyboard)
+
+
+@dp.callback_query_handler(lambda c: c.data == 'getInvoiceCompany')
 async def process_callback_getInvouce(callback_query: types.CallbackQuery):
     await Company.inn.set()
     await bot.answer_callback_query(callback_query.id)
     await bot.send_message(callback_query.from_user.id, 'Введите пожалуйства ИНН вашей фирмы:')
 
 
-@dp.callback_query_handler(lambda c: c.data == 'getPerson')
+@dp.callback_query_handler(lambda c: c.data == 'getInvoicePerson')
 async def process_callback_getInvouce(callback_query: types.CallbackQuery):
 
     await bot.answer_callback_query(callback_query.id)
