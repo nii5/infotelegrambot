@@ -1,0 +1,15 @@
+[Unit]
+Description=aiopneumax bot
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/environment
+ExecStart=/home/aiopneumaxbot/venv/bin/python3 aibot.py
+ExecReload=/home/aiopneumaxbot/venv/bin/python3 aibot.py
+WorkingDirectory=/home/aiopneumaxbot/
+KillMode=process
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

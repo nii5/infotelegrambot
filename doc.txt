@@ -1,0 +1,38 @@
+Необходимо подключиться к боту @BotFather, чтобы получить список чат-команд в Telegram. Далее нужно набрать команду
+/newbot для инструкций выбора название и имени бота. После успешного создания бота вы получите следующее сообщение:
+
+Done! Congratulations on your new bot. You will find it at telegram.me/<username>.
+You can now add a description, about section and profile picture for your bot, see /help for a list of commands.
+By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it.
+Just make sure the bot is fully operational before you do this.
+
+Use this token to access the HTTP API:
+<token> (here goes the bot’s token)
+
+For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+Его нужно сразу настроить. Необходимо добавить описание и текст о боте (команды /setdescription и /setabouttext),
+фото профиля (/setuserpic), включить встроенный режим (/setinline),
+добавить описания команд (/setcommands). Потребуется использовать две команды:
+/help и /exchange. Стоит описать их в /setcommands.
+
+
+aiogram
+Метод add принимает в себя любое количество кнопок, всегда начинает добавление с новой строки и переносит ряд при достижении значения установленной ширины.
+Метод row тоже принимает любое количество, но при этом не переносит кнопки на новый ряд, а добавляет всё полученное в одну строчку.
+Метод insert работает по схеме схожей с add, но только начинает добавлять к последнему ряду. И только если там уже достигнута максимальная ширина, начинает новую строку. Взглянем на него ещё раз при создании следующей клавиатуры.
+
+
+cd /home/aiopneumaxbot
+source venv/bin/activate
+deactivate
+
+
+/lib/systemd/system/
+sudo systemctl enable aiopneumax.service
+sudo systemctl start aiopneumax.service
+sudo systemctl stop aiopneumax.service
+
+
+sudo systemctl enable loadbasebot.service
+sudo systemctl start loadbasebot.service
+sudo systemctl stop loadbasebot.service

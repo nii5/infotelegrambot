@@ -1,3 +1,5 @@
 aiogram
 logging
 pandas
+openpyxl
+xlrd
